@@ -29,6 +29,24 @@ class CreateFace:
         draw.chord([(.25*self.width, .75*self.height), (.75*self.width, .90*self.height)], 0, 180, fill=self.get_random_color())
         
     
+    def roblox_meme_face(self)-> None:
+        draw = ImageDraw.Draw(self.image)
+        
+        draw.arc([(322, 151), (363, 268)], -180, -90, fill=0, width=4)
+        draw.arc([(117, 171), (305, 217)], 0, 115, fill=0, width=4)
+        draw.arc([(168, 201), (208, 226)], 115, 200, fill=0, width=4)
+        draw.line([(90, 67), (159, 67)], fill=0, width=1)
+        draw.line([(84, 79), (144, 79)], fill=0, width=3)
+        draw.line([(144, 79), (156, 83)], fill=0, width=3)
+        draw.line([(138, 79), (151, 101)], fill=0, width=3)
+        draw.line([(75, 105), (157, 105)], fill=0, width=3)
+        draw.line([(66, 98), (75, 105)], fill=0, width=3)
+        draw.line([(56, 101), (84, 79)], fill=0, width=3)
+        draw.arc([(164, 72), (167, 102)], -30, 10, fill=0, width=4)
+        draw.rounded_rectangle([(94, 80), (131, 102)], radius=4, fill=0, width=4)
+        draw.rounded_rectangle([(115, 86), (120, 91)], radius=1, fill=(255,255,255), width=4)
+
+    
     def show_image(self) -> None:
         self.image.show()
         
@@ -44,9 +62,10 @@ class Ellipses:
     circle_dims: dict
 
 if __name__ == "__main__":
-    test = CreateFace()
+    # test = CreateFace()
     
-    test.random_color()
-    test.draw_face()
-    test.show_image()
-    print("hje")
+    # test.random_color()
+    # test.draw_face()
+    # test.show_image()
+    # print("hje")
+    print(image_size := Image.open("roblox_face.png").size) # walrus operator goes ooooouuuuh
