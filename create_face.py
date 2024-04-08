@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw
 from dataclasses import dataclass
 import random
+import sqlite3
 
 class CreateFace:
     def __init__(self, width:int=400, height:int=400) -> None:
@@ -46,6 +47,7 @@ class CreateFace:
         draw.rounded_rectangle([(94, 80), (131, 102)], radius=4, fill=0, width=4)
         draw.rounded_rectangle([(115, 86), (120, 91)], radius=1, fill=(255,255,255), width=4)
 
+
     
     def show_image(self) -> None:
         self.image.show()
@@ -56,16 +58,15 @@ class CreateFace:
     def throw_image(self) -> Image:
         return self.image
         
-@dataclass
+@dataclass()
 class Ellipses:
     image_id: int
     circle_dims: dict
 
 if __name__ == "__main__":
+    print(image_size := Image.open("roblox_face.png").size) # walrus operator goes ooooouuuuh   
     # test = CreateFace()
-    
     # test.random_color()
     # test.draw_face()
     # test.show_image()
     # print("hje")
-    print(image_size := Image.open("roblox_face.png").size) # walrus operator goes ooooouuuuh

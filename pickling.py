@@ -15,7 +15,7 @@ hello = testClass("liam", 403)
     
 print(hello.__repr__())
 
-
+# trying to do things.
 pickle_string = pickle.dumps(hello)
 
 with open("hello.pickle", 'wb') as file:
